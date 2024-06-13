@@ -5,6 +5,7 @@ import { createNewUser } from "../api/userApi";
 const Login = () => {
     const [inputs, setInputs] = useState({})
 
+    // eslint-disable-next-line no-unused-vars
     const redirect = useNavigate();
     // funciones
     const handleInputs = (event) => {
