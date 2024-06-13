@@ -1,9 +1,10 @@
-import Welcome from "./pages/Welcome/Welcome"
+import UserProvider from './app/UserProvider';
+import NavBar from './components/NavBar';
 const App = () => {
   return (
-    <div>
-      <Welcome/>
-    </div>
+    <UserProvider>
+      <NavBar/>
+    </UserProvider>
   )
 }
 
