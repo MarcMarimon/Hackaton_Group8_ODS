@@ -1,7 +1,10 @@
+import Cursos from "../components/Cursos"
 
 const Home = () => {
     return (
-        <div className="size-96 bg-amber-400"></div>
+        <div>
+            <Cursos/>
+        </div>
     )
 }
 

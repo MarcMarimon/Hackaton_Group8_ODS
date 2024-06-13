@@ -2,8 +2,8 @@ import { supabase } from './supabase'
 
 let cursos = []
 
-export const useCursosApi = () => {
-    const obtenerCursos = async () => {
+
+  export const obtenerCursos = async () => {
         if (cursos.length === 0) {
             const { data, error } = await supabase.from('cursos').select('*')
             if (error) {
@@ -14,7 +14,7 @@ export const useCursosApi = () => {
         return cursos
     }
 
-    const crearCurso = async (nombre, descripcion, categoriaId, usuarioId) => {
+ export   const crearCurso = async (nombre, descripcion, categoriaId, usuarioId) => {
         const { data, error } = await supabase.from('cursos').insert([
             { nombre, descripcion, categoria_id: categoriaId, usuario_id: usuarioId }
         ])
@@ -25,7 +25,7 @@ export const useCursosApi = () => {
         return data
     }
 
-    const eliminarCurso = async (cursoId) => {
+ export   const eliminarCurso = async (cursoId) => {
         const { data, error } = await supabase.from('cursos').delete().match({ id: cursoId })
         if (error) {
             throw new Error(error.message)
@@ -34,9 +34,5 @@ export const useCursosApi = () => {
         return data
     }
 
-    return {
-        obtenerCursos,
-        crearCurso,
-        eliminarCurso
-    }
-}
+ 
+
