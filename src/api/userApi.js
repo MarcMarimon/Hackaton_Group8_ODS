@@ -6,7 +6,7 @@ const saveUserToLocalStorage = (user) => {
 }
 
 // Función para obtener el usuario desde localStorage
-const getUserFromLocalStorage = () => {
+export const getUserFromLocalStorage = () => {
     const user = localStorage.getItem('currentUser')
     return user ? JSON.parse(user) : null
 }

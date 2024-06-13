@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import { fetchActualUser, createNewUser, logIn, signOutUser } from '@/api/supabase'
+import { fetchActualUser, createNewUser, logIn, signOutUser, getUserFromLocalStorage } from '@/api/supabase'
 
 const UserContext = createContext()
 
