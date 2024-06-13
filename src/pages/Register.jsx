@@ -35,12 +35,12 @@ const Login = () => {
     return (
         <>
 
-            <div className=" p-4 md:p-0 md:flex md:flex-row md:justify-between w-full md:h-screen mx-auto rounded-lg bg-[#017C9B]">
+            <div className=" p-4 md:p-0 md:flex md:flex-row md:justify-between w-full md:h-screen mx-auto rounded-lg bg-gradient-to-r from-[#7a8fac] to-[#01639b] ">
                 <div className="flex flex-col  p-2 md:mt-16 w-1/2 text-black">
                     <div
                     >
                         <div >
-                            <h1 className="md:text-5xl font-semibold text-3xl w-fit mx-auto text-white">Registrarse</h1>
+                            <h1 className="md:text-5xl font-semibold text-3xl w-fit mx-auto text-white mb-16">Regístrate</h1>
                             <form
                                 onSubmit={handleSubmit}
                                 className="flex flex-col w-full mx-auto md:gap-8 md:px-8"
