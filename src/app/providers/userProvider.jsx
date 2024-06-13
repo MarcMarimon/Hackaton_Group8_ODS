@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import { fetchActualUser, createNewUser, logIn, signOutUser, getUserFromLocalStorage } from '@/api/supabase'
+import { fetchActualUser, createNewUser, logIn, signOutUser, getUserFromLocalStorage } from './userApi.js'
 
 const UserContext = createContext()
 
@@ -42,8 +42,3 @@ export const UserProvider = ({ children }) => {
 }
 
 export const useUser = () => useContext(UserContext)
-
-const getUserFromLocalStorage = () => {
-    const user = localStorage.getItem('currentUser')
-    return user ? JSON.parse(user) : null
-}
