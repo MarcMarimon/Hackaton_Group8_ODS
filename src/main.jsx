@@ -5,7 +5,7 @@ import Layout from './pages/Layout.jsx'
 import LandingPage from './pages/LandingPage.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
-import Home from './pages/Home.jsx'
+import Cursos from './components/Cursos.jsx'
 
 
 
@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route index element={<LandingPage />}></Route>
-        <Route path='/home' element={<Home />}></Route>
+        <Route path='/cursos' element={<Cursos />}></Route>
       </Route>
       <Route path='/login' element={<Login />}></Route>
       <Route path='/register' element={<Register />}></Route>
