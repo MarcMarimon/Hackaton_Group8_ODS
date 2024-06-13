@@ -1,4 +1,4 @@
-import { supabase } from '@/api/supabase'
+import { supabase } from '../api/supabase'
 
 // Función para guardar el usuario en localStorage
 const saveUserToLocalStorage = (user) => {
@@ -19,7 +19,7 @@ export const fetchActualUser = async () => {
         saveUserToLocalStorage(user)
     }
     return user
-    
+
 }
 
 // Sign up new user and save to localStorage

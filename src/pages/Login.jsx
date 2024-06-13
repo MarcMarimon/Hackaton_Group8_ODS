@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { logIn } from '../api/userApi'
+import { useUserContext } from "../app/UserProvider";
 
 const Login = () => {
     const [inputs, setInputs] = useState({})
-
+    const [user, setUser] = useUserContext();
     // eslint-disable-next-line no-unused-vars
     const redirect = useNavigate();
     // funciones
@@ -15,26 +17,31 @@ const Login = () => {
         });
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         // fetch para enviar datos
-        console.log('hello')
-        console.log(inputs)
+        const response = await logIn(inputs.email, inputs.password);
+        setUser(response);
 
         // limpiar inputs
         setInputs({ email: "", password: "" });
     };
 
 
+    useEffect(() => {
+        console.log('user')
+        console.log(user)
+    }, [user])
+
     return (
         <>
 
             <div className=" p-4 md:p-0 md:flex md:flex-row md:justify-between w-full md:h-screen mx-auto rounded-lg bg-[#017C9B]">
-                <div className="flex flex-col  p-2 md:mt-16 w-1/2 text-white">
+                <div className="flex flex-col  p-2 md:mt-16 w-1/2 text-black">
                     <div
                     >
                         <div >
-                            <h1 className="md:text-5xl font-semibold text-3xl w-fit mx-auto ">Iniciar sesión</h1>
+                            <h1 className="md:text-5xl font-semibold text-3xl w-fit mx-auto text-white">Iniciar sesión</h1>
                             <form
                                 onSubmit={handleSubmit}
                                 className="flex flex-col w-full mx-auto md:gap-8 md:px-8"

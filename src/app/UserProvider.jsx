@@ -6,11 +6,11 @@ export const useUserContext = () => useContext(AppContext);
 
 // eslint-disable-next-line react/prop-types
 const UserProvider = ({ children }) => {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState({});
     return (
         <AppContext.Provider value={[user, setUser]}>
             {children}
-        </AppContext.Provider>
+        </AppContext.Provider >
     );
 }
 

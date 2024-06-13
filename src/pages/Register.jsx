@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { createNewUser } from "../api/userApi";
 
 const Login = () => {
     const [inputs, setInputs] = useState({})
@@ -14,14 +15,19 @@ const Login = () => {
         });
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         // fetch para enviar datos
         console.log('hello')
         console.log(inputs)
 
+        const response = await createNewUser(inputs.email, inputs.password, inputs.name);
+        console.log(response)
+
+
+
         // limpiar inputs
-        setInputs({ name: "", email: "", password: "" });
+        setInputs({ user_name: "", email: "", password: "" });
     };
 
 
@@ -29,11 +35,11 @@ const Login = () => {
         <>
 
             <div className=" p-4 md:p-0 md:flex md:flex-row md:justify-between w-full md:h-screen mx-auto rounded-lg bg-[#017C9B]">
-                <div className="flex flex-col  p-2 md:mt-16 w-1/2 text-white">
+                <div className="flex flex-col  p-2 md:mt-16 w-1/2 text-black">
                     <div
                     >
                         <div >
-                            <h1 className="md:text-5xl font-semibold text-3xl w-fit mx-auto ">Registrarse</h1>
+                            <h1 className="md:text-5xl font-semibold text-3xl w-fit mx-auto text-white">Registrarse</h1>
                             <form
                                 onSubmit={handleSubmit}
                                 className="flex flex-col w-full mx-auto md:gap-8 md:px-8"
@@ -43,7 +49,7 @@ const Login = () => {
                                     <input
                                         className="flex items-center shadow-sm md:w-3/4  shadow-neutral-300 p-2 border border-neutral-400 rounded-full "
                                         type="text"
-                                        name="name"
+                                        name="user_name"
                                         value={inputs.name}
                                         onChange={handleInputs}
                                     ></input>
