@@ -1,7 +1,9 @@
-
+import Welcome from "./pages/Welcome/Welcome"
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Welcome/>
+    </div>
   )
 }
 
