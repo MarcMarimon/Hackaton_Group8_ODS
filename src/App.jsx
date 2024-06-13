@@ -1,7 +1,13 @@
+import UserProvider from './app/providers/UserProvider';
+import NavBar from './components/NavBar';
+import LandingPage from './pages/LandingPage';
 
 const App = () => {
   return (
-    <div>App</div>
+    <UserProvider>
+      <NavBar/>
+      <LandingPage/>
+    </UserProvider>
   )
 }
 
