@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
     const [inputs, setInputs] = useState({})
 
+    // eslint-disable-next-line no-unused-vars
     const redirect = useNavigate();
     // funciones
     const handleInputs = (event) => {
