@@ -1,13 +1,10 @@
-import UserProvider from './app/providers/UserProvider';
-import NavBar from './components/NavBar';
-import LandingPage from './pages/LandingPage';
+import Cursos from "./components/Cursos"
 
 const App = () => {
   return (
-    <UserProvider>
-      <NavBar/>
-      <LandingPage/>
-    </UserProvider>
+    <div>
+      <Cursos/>
+    </div>
   )
 }
 
