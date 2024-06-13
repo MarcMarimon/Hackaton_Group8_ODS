@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> Luchi
 const NavBar = () => {
   return (
     <nav className="fixed top-0 bg-[#017C9B] h-10 w-[100%] flex justify-between px-3 items-center">
