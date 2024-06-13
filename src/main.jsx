@@ -9,7 +9,6 @@ import Cursos from './components/Cursos.jsx'
 import UserProvider from './app/UserProvider.jsx'
 
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <UserProvider>
     <BrowserRouter>
